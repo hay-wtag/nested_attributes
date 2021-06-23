@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Title:</strong>
+  <%= @product.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+<p>
+  Available variants: <%= @product.product_variants.count %>
+</p>
+<% @product.product_variants.each do |variant|%>
+  <p>
+    <%= variant.color %>
+    <%= variant.size %>
+  </p>
+<%end%>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
